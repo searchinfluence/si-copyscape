@@ -41,3 +41,19 @@ copyscape.private_matches! text
 # Performs a public internet & private index search (CREDIT COST: 2)
 copyscape.internet_and_private_matches! text
 ```
+
+Add text to our private index on Copyscape.com
+```ruby
+copyscape.add_to_private_index(
+ text: 'Text to add to index',
+ title: 'Title', # not required
+ id: 420 # not required
+)
+```
+
+If there is an error, you can get a string describing the error (returns nil if there is no error)
+```ruby
+copyscape.internet_matches! "test"
+copyscape.error
+#=>"At least 15 words are required to perform a search"
+```
