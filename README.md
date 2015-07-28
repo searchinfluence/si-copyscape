@@ -9,6 +9,9 @@ Set the following environment variables (or pass the values in during initializa
 - ENV['COPYSCAPE_API_KEY']
  
 ```
+# Gem lives at http://gems.searchinfluence.com
+# It is recommended to specify a version anytime you are using a SI gem
+
 gem install si-copyscape
 ```
 
