@@ -1,26 +1,46 @@
 module SI
   class CopyscapeResponse
 
-    attr_reader :raw, :error, :to_hash
+    attr_reader :raw, :error
 
     def initialize raw_response:
       @raw = raw_response
       @error = _error_msg
-      @to_hash = _to_hash
     end
 
     def raw_xml
       raw.body
     end
 
+    def raw_hash
+      _to_hash
+    end
+
+    def remaining
+      _to_hash.try(:[],'remaining')
+    end
+
+    def response
+      _to_hash.try(:[], 'response')
+    end
+
+    def results
+      result = response.try(:[],'result') || []
+      result.is_a?(Array) ? result : [result]
+    end
+
+    def query_words
+      response.try(:[], 'querywords')
+    end
+
   private
 
     def _to_hash
-      Hash.from_xml(raw_xml).with_indifferent_access
+      Crack::XML.parse(raw_xml)
     end
 
     def _error_msg
-      _to_hash.try(:[], 'response').try(:[], 'error')
+      response.try(:[], 'error')
     end
 
   end

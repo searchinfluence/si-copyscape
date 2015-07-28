@@ -1,3 +1,4 @@
+require 'crack/xml'
 require 'net/http'
 require 'uri'
 

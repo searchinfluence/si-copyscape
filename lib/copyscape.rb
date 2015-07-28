@@ -18,7 +18,7 @@ module SI
     end
 
     def credit_balance
-      _request(operation: 'balance', node: 'remaining')
+      _request(operation: 'balance').remaining
     end
 
     def internet_matches! text
@@ -47,7 +47,7 @@ module SI
 
     def add_to_private_index text:, title: nil, id: nil, encoding: 'UTF-8'
       params = { e: encoding, a: title, i: id }
-      _request(operation: 'pindexadd', params: params, postdata: text)
+      _request(operation: 'pindexadd', params: params, postdata: text).response
     end
 
   private
@@ -57,8 +57,8 @@ module SI
       _request(operation: operation, params: params, postdata: text);
     end
 
-    def _request operation:, params: {}, postdata: nil, node: :response
-      api.request(operation: operation, params: params, postdata: postdata).to_hash[node]
+    def _request operation:, params: {}, postdata: nil
+      api.request(operation: operation, params: params, postdata: postdata)
     end
 
   end

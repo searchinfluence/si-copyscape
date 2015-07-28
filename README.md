@@ -11,7 +11,7 @@ Copyscape Documentation: (requires login) http://copyscape.com/apiconfigure.php
 Set the following environment variables (or pass the values in during initialization):
 - ENV['COPYSCAPE_USERNAME']
 - ENV['COPYSCAPE_API_KEY']
- 
+
 ```
 # Gem lives at http://gems.searchinfluence.com
 # It is recommended to specify a version anytime you are using a SI gem
@@ -56,11 +56,19 @@ copyscape.add_to_private_index(
  title: 'Title', # not required
  id: 420 # not required
 )
+#=> {"words"=>"5", "handle"=>"SIA_2_E00JOQ0A2W_T1Q2J78LA1", "id"=>"420", "title"=>"Title"}
 ```
 
 If there is an error, you can get a string describing the error (returns nil if there is no error)
 ```ruby
 copyscape.internet_matches! "test"
 copyscape.error
+#=>"At least 15 words are required to perform a search"
+```
+
+The error method is also available on the SI::CopyscapeMatches collection returned after a search
+```ruby
+matches = copyscape.internet_matches! "test"
+matches.error
 #=>"At least 15 words are required to perform a search"
 ```
