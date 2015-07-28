@@ -31,8 +31,7 @@ module SI
           match[:url],
           match[:viewurl],
           match[:textsnippet],
-          match[:htmlsnippet],
-          match
+          match[:htmlsnippet]
         ) if match[:percentmatched].to_i >= match_percent
       end.compact.sort{|a,b| b.percent_matched <=> a.percent_matched}
     end

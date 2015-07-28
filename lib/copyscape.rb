@@ -1,7 +1,7 @@
 module SI
   class CopyScape
 
-    Match = Struct.new(:words_matched, :percent_matched, :title, :url, :copyscape_url, :text_snippet, :html_snippet, :raw_response)
+    Match = Struct.new(:words_matched, :percent_matched, :title, :url, :copyscape_url, :text_snippet, :html_snippet)
 
     attr_reader :api, :match_percent
 
