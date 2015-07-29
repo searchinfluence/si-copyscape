@@ -35,7 +35,7 @@ module SI
           match['viewurl'],
           match['textsnippet'],
           match['htmlsnippet']
-        ) if match['percentmatched'].to_i >= match_percent
+        ) if match['percentmatched'].to_i >= match_percent && match['urlerror'].nil?
       end.compact.sort{|a,b| b.percent_matched <=> a.percent_matched}
     end
 
