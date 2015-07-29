@@ -1,8 +1,11 @@
 module SI
   class CopyScape
 
+    # Data Structures used for responses to the public api
     Match = Struct.new(:words_matched, :percent_matched, :title, :url, :copyscape_url, :text_snippet, :html_snippet)
     Balance = Struct.new(:value, :total, :today)
+    PrivateIndex = Struct.new(:words, :handle, :id, :title)
+
 
     attr_reader :api, :match_percent
 
@@ -49,7 +52,8 @@ module SI
 
     def add_to_private_index text:, title: nil, id: nil, encoding: 'UTF-8'
       params = { e: encoding, a: title, i: id }
-      _request(operation: 'pindexadd', params: params, postdata: text).response
+      res = _request(operation: 'pindexadd', params: params, postdata: text).response
+      PrivateIndex.new(res['words'],res['handle'],res['id'],res['title'])
     end
 
   private
