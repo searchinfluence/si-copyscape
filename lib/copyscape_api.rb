@@ -10,11 +10,7 @@ module SI
     end
 
     def request operation:, params: {}, postdata: nil
-      uri_hash = {
-        u: username,
-        k: api_key,
-        o: operation
-      }
+      uri_hash = { u: username, k: api_key, o: operation }
       uri_string = api_url + '?' + params.merge(uri_hash).map{|k,v| "#{k}=#{v}"}.join('&')
       uri = URI.parse(URI.encode(uri_string))
       @response = _respond_to _call_api(uri, postdata)
