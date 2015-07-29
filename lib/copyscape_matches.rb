@@ -3,7 +3,6 @@ module SI
 
     include Enumerable
     attr_reader :collection, :query_word_count, :match_percent, :error
-    delegate :each, to: :collection
 
     def initialize response:, match_percent:
       @query_word_count = response.query_words.to_i
@@ -20,6 +19,9 @@ module SI
       collection.map{|m| m.html_snippet}
     end
 
+    def each(&block)
+        collection.each(&block)
+    end
   private
 
     def _build_collection response

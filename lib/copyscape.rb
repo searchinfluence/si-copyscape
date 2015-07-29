@@ -1,11 +1,10 @@
 module SI
   class CopyScape
 
-    # Data Structures used for responses to the public api
+    # Data Structures used for responses to the public interface
     Match = Struct.new(:words_matched, :percent_matched, :title, :url, :copyscape_url, :text_snippet, :html_snippet)
     Balance = Struct.new(:value, :total, :today)
     PrivateIndex = Struct.new(:words, :handle, :id, :title)
-
 
     attr_reader :api, :match_percent
 
