@@ -65,9 +65,9 @@ matches = copyscape.internet_matches! text
 #  }
 # ]
 
-match.first.url
-match.first[:url]
-match.first['url']
+matches.first.url
+matches.first[:url]
+matches.first['url']
 #=> "http://www.searchinfluence.com/"
 ```
 
