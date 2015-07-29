@@ -37,7 +37,7 @@ copyscape.credit_balance
 
 Perform text searches for copy matches
 ```ruby
-text = "All the words to look for"
+text = "A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers."
 
 # Performs a public internet search (CREDIT COST: 1)
 copyscape.internet_matches! text
@@ -50,7 +50,6 @@ copyscape.internet_and_private_matches! text
 
 # All these methods return an array of data structs SI::CopyScape::Match
 # Each value in the struct is accessible as a method, hash or string
-text = "A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers."
 matches = copyscape.internet_matches! text
 #=>
 # [
