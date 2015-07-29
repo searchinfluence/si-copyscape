@@ -5,7 +5,7 @@ require 'version'
 
 Gem::Specification.new do |spec|
   spec.name          = "si-copyscape"
-  spec.version       = VERSION
+  spec.version       = SI::CopyScape::VERSION
   spec.authors       = ['Shane Kretzmann']
   spec.email         = ["SKretzmann@searchinfluence.com"]
   spec.summary       = %q{Gem to interface with Copyscape api}
