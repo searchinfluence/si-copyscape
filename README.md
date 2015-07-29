@@ -50,19 +50,19 @@ copyscape.private_matches! text
 # Performs a public internet & private index search (CREDIT COST: 2)
 copyscape.internet_and_private_matches! text
 
-# All these methods return an array of data structs SI::CopyScape::Match
+# All these methods return an array of data structs ex:
 matches = copyscape.internet_matches! text
 #=>
 # [
-#  {
-#        :words_matched => 20,
-#      :percent_matched => 100,
-#                :title => "Search Influence | Website Promotion Company",
-#                  :url => "http://www.searchinfluence.com/",
-#        :copyscape_url => "http://view.copyscape.com/compare/wpbdhatumu/1",
-#         :text_snippet => "... Trusted, Scalable Search, Social and Online Advertising. A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.",
-#         :html_snippet => "<font color=\"#777777\">... Trusted, Scalable Search, Social and Online Advertising. </font><font color=\"#000000\">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>"
-#  }
+#  <struct SI::CopyScape::Match
+#        words_matched = 20,
+#      percent_matched = 100,
+#                title = "Search Influence | Website Promotion Company",
+#                  url = "http://www.searchinfluence.com/",
+#        copyscape_url = "http://view.copyscape.com/compare/wpbdhatumu/1",
+#         text_snippet = "... Trusted, Scalable Search, Social and Online Advertising. A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.",
+#         html_snippet = "<font color=\"#777777\">... Trusted, Scalable Search, Social and Online Advertising. </font><font color=\"#000000\">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>"
+#  >
 # ]
 
 # Each value in the struct is accessible by passing a string or symbol key
