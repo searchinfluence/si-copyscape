@@ -12,10 +12,9 @@ Set the following environment variables (or pass the values in during initializa
 - ENV['COPYSCAPE_USERNAME']
 - ENV['COPYSCAPE_API_KEY']
 
-```
-# It is recommended to specify a version anytime you are using a SI gem
-# Find the most recent version at http://gems.searchinfluence.com/gems/si-copyscape
+Find the most recent version of this gem at http://gems.searchinfluence.com/gems/si-copyscape and then specify the version number when adding this gem to your application's Gemfile.
 
+```ruby
 # Add the following to your Gemfile
 source 'http://user:pass@gems.searchinfluence.com' do
   gem 'si-copyscape', '0.0.0'
