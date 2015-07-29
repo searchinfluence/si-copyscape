@@ -34,7 +34,7 @@ copyscape = SI::CopyScape.new(
 Get Remaining Credit Information
 ```ruby
 copyscape.credit_balance
-#=>{"value"=>"114.9", "total"=>"2298", "today"=>"2298"}
+#=><struct SI::CopyScape::Balance value="112.62", total="2252", today="2252">
 ```
 
 Perform text searches for copy matches
