@@ -17,20 +17,20 @@ module SI
     end
 
     def remaining
-      raw_hash.try(:[],'remaining')
+      raw_hash['remaining']
     end
 
     def response
-      raw_hash.try(:[], 'response')
+      raw_hash['response']
     end
 
     def results
-      result = response.try(:[],'result') || []
-      result.is_a?(Array) ? result : [result]
+      result = response['result'] if response.is_a?(Hash)
+      result.is_a?(Array) ? result : [result].compact
     end
 
     def query_words
-      response.try(:[], 'querywords')
+      response['querywords'] if response.is_a?(Hash)
     end
 
   private
@@ -40,7 +40,7 @@ module SI
     end
 
     def _error_msg
-      response.try(:[], 'error')
+      response['error'] if response.is_a?(Hash)
     end
 
   end

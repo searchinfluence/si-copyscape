@@ -17,7 +17,7 @@ module SI
     end
 
     def error
-      api.response.try(:error)
+      api.response.error
     end
 
     def credit_balance
