@@ -20,8 +20,9 @@ module SI
     end
 
     def each(&block)
-        collection.each(&block)
+      collection.each(&block)
     end
+
   private
 
     def _build_collection response
