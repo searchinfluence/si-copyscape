@@ -51,7 +51,6 @@ copyscape.private_matches! text
 copyscape.internet_and_private_matches! text
 
 # All these methods return an array of data structs ex:
-matches = copyscape.internet_matches! text
 #=>
 # [
 #  <struct SI::CopyScape::Match
@@ -64,15 +63,6 @@ matches = copyscape.internet_matches! text
 #         html_snippet = "<font color=\"#777777\">... Trusted, Scalable Search, Social and Online Advertising. </font><font color=\"#000000\">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>"
 #  >
 # ]
-
-# Each value in the struct is accessible by passing a string or symbol key
-# or by calling a method named the same as the key.
-matches.first.url
-#=> "http://www.searchinfluence.com/"
-matches.first[:url]
-#=> "http://www.searchinfluence.com/"
-matches.first['url']
-#=> "http://www.searchinfluence.com/"
 ```
 
 Add text to our private index on Copyscape.com
