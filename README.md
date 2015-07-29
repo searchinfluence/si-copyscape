@@ -14,7 +14,7 @@ Set the following environment variables (or pass the values in during initializa
 
 ```
 # It is recommended to specify a version anytime you are using a SI gem
-# Find the most recent version at http://gems.searchinfluence.com
+# Find the most recent version at http://gems.searchinfluence.com/gems/si-copyscape
 
 gem install si-copyscape, '0.0.0'
 ```
