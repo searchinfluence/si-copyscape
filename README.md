@@ -48,7 +48,7 @@ copyscape.private_matches! text
 # Performs a public internet & private index search (CREDIT COST: 2)
 copyscape.internet_and_private_matches! text
 
-# All these methods return an array of structs SI::CopyScape::Match
+# All these methods return an array of data structs SI::CopyScape::Match
 # Each value in the struct is accessible as a method, hash or string
 text = "A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers."
 matches = copyscape.internet_matches! text
