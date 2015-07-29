@@ -52,7 +52,7 @@ module SI
     def add_to_private_index text:, title: nil, id: nil, encoding: 'UTF-8'
       params = { e: encoding, a: title, i: id }
       res = _request(operation: 'pindexadd', params: params, postdata: text).response
-      PrivateIndex.new(res['words'].to_i,res['handle'],res['id'],res['title'])
+      PrivateIndex.new(res['words'].to_i, res['handle'], res['id'], res['title'])
     end
 
   private
