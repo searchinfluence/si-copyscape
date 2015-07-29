@@ -2,6 +2,7 @@ module SI
   class CopyScape
 
     Match = Struct.new(:words_matched, :percent_matched, :title, :url, :copyscape_url, :text_snippet, :html_snippet)
+    Balance = Struct.new(:value, :total, :today)
 
     attr_reader :api, :match_percent
 
@@ -18,7 +19,8 @@ module SI
     end
 
     def credit_balance
-      _request(operation: 'balance').remaining
+      res = _request(operation: 'balance').remaining
+      Balance.new(res['value'], res['total'], res['today'])
     end
 
     def internet_matches! text
