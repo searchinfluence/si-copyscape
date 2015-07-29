@@ -13,10 +13,10 @@ Set the following environment variables (or pass the values in during initializa
 - ENV['COPYSCAPE_API_KEY']
 
 ```
-# Gem lives at http://gems.searchinfluence.com
 # It is recommended to specify a version anytime you are using a SI gem
+# Find the most recent version at http://gems.searchinfluence.com
 
-gem install si-copyscape
+gem install si-copyscape, '0.0.0'
 ```
 
 Instantiate the copyscape object with the following optional paramaters
@@ -48,21 +48,27 @@ copyscape.private_matches! text
 # Performs a public internet & private index search (CREDIT COST: 2)
 copyscape.internet_and_private_matches! text
 
-# All these methods return an array of objects ex:
+# All these methods return an array of structs SI::CopyScape::Match
+# Each value in the struct is accessible as a method, hash or string
 text = "A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers."
-copyscape.internet_matches! text
+matches = copyscape.internet_matches! text
 #=>
-[
-  {
-        :words_matched => 20,
-      :percent_matched => 100,
-                :title => "Search Influence | Website Promotion Company",
-                  :url => "http://www.searchinfluence.com/",
-        :copyscape_url => "http://view.copyscape.com/compare/wpbdhatumu/1",
-         :text_snippet => "... Trusted, Scalable Search, Social and Online Advertising. A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.",
-         :html_snippet => "<font color=\"#777777\">... Trusted, Scalable Search, Social and Online Advertising. </font><font color=\"#000000\">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>"
-  }
-]
+# [
+#  {
+#        :words_matched => 20,
+#      :percent_matched => 100,
+#                :title => "Search Influence | Website Promotion Company",
+#                  :url => "http://www.searchinfluence.com/",
+#        :copyscape_url => "http://view.copyscape.com/compare/wpbdhatumu/1",
+#         :text_snippet => "... Trusted, Scalable Search, Social and Online Advertising. A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.",
+#         :html_snippet => "<font color=\"#777777\">... Trusted, Scalable Search, Social and Online Advertising. </font><font color=\"#000000\">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>"
+#  }
+# ]
+
+match.first.url
+match.first[:url]
+match.first['url']
+#=> "http://www.searchinfluence.com/"
 ```
 
 Add text to our private index on Copyscape.com
