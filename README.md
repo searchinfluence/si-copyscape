@@ -82,7 +82,7 @@ copyscape.add_to_private_index(
  title: 'Title', # not required
  id: 420 # not required
 )
-#=> {"words"=>"5", "handle"=>"SIA_2_E00JOQ0A2W_T1Q2J78LA1", "id"=>"420", "title"=>"Title"}
+#=><struct SI::CopyScape::PrivateIndex words=5, handle="SIA_2_E00JOQ0A2W_T1Q2J78LA1", id="420", title="Title">
 ```
 
 If there is an error, you can get a string describing the error (returns nil if there is no error)
