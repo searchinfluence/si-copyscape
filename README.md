@@ -49,7 +49,6 @@ copyscape.private_matches! text
 copyscape.internet_and_private_matches! text
 
 # All these methods return an array of data structs SI::CopyScape::Match
-# Each value in the struct is accessible as a method, hash or string
 matches = copyscape.internet_matches! text
 #=>
 # [
@@ -64,8 +63,12 @@ matches = copyscape.internet_matches! text
 #  }
 # ]
 
+# Each value in the struct is accessible by passing a string or symbol key
+# or by calling a method named the same as the key.
 matches.first.url
+#=> "http://www.searchinfluence.com/"
 matches.first[:url]
+#=> "http://www.searchinfluence.com/"
 matches.first['url']
 #=> "http://www.searchinfluence.com/"
 ```
