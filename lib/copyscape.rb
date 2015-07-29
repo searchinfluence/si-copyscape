@@ -20,7 +20,7 @@ module SI
 
     def credit_balance
       res = _request(operation: 'balance').remaining
-      Balance.new(res['value'], res['total'], res['today'])
+      Balance.new(res['value'].to_f, res['total'].to_i, res['today'].to_i)
     end
 
     def internet_matches! text
