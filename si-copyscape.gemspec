@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["SKretzmann@searchinfluence.com"]
   spec.summary       = %q{Gem to interface with Copyscape api}
   spec.description   = %q{Allow any ruby application to easily interact with copyscape premium api}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/searchinfluence/copyscape"
   spec.license       = "Private Property (c) Search Influence"
 
   spec.files         = `git ls-files -z`.split("\x0")
