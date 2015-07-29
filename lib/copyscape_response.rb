@@ -9,7 +9,7 @@ module SI
     end
 
     def raw_xml
-      raw.body
+      raw_response.body
     end
 
     def raw_hash
