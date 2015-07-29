@@ -1,10 +1,10 @@
 module SI
   class CopyscapeResponse
 
-    attr_reader :raw, :error
+    attr_reader :raw_response, :error
 
     def initialize raw_response:
-      @raw = raw_response
+      @raw_response ||= raw_response
       @error = _error_msg
     end
 
@@ -17,11 +17,11 @@ module SI
     end
 
     def remaining
-      _to_hash.try(:[],'remaining')
+      raw_hash.try(:[],'remaining')
     end
 
     def response
-      _to_hash.try(:[], 'response')
+      raw_hash.try(:[], 'response')
     end
 
     def results
