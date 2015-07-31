@@ -107,9 +107,6 @@ matches.error
     14.8: SI::CopyscapeAPI#request         lib/copyscape_api.rb:12
     11.0: SI::CopyscapeAPI#_call_api       lib/copyscape_api.rb:27
 
-     7.7: main total
-     7.7: main#none
-
      7.1: SI::CopyscapeResponse total
      7.1: SI::CopyscapeResponse#results    lib/copyscape_response.rb:27
 ```
