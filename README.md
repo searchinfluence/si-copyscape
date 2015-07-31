@@ -87,7 +87,7 @@ matches.error
 #=>"At least 15 words are required to perform a search"
 ```
 
-# Flog Score
+## Flog Score
 ```
    177.7: flog total
      5.2: flog/method average
