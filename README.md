@@ -1,7 +1,7 @@
 # SI::CopyScape Gem
 A gem to provide the communication layer with the Copyscape.com Premium API and your application.
 
-Wiki: http://wiki.searchinfluence.com/index.php?title=CopyScape
+Wiki: (requires login) http://wiki.searchinfluence.com/index.php?title=CopyScape
 
 Copyscape API Documentation: (requires login) http://copyscape.com/apiconfigure.php
 
