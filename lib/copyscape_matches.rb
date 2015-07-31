@@ -7,7 +7,7 @@ module SI
     def initialize response:, match_percent:
       @query_word_count = response.query_words.to_i
       @match_percent = match_percent.to_i
-      @collection = _build_collection response
+      @collection = _build_collection response.results
       @error = response.error
     end
 
@@ -25,8 +25,8 @@ module SI
 
   private
 
-    def _build_collection response
-      response.results.map do |match|
+    def _build_collection results
+      results = _without_rejects(results).map do |match|
         SI::CopyScape::Match.new(
           match['wordsmatched'].to_i,
           match['percentmatched'].to_i,
@@ -35,8 +35,17 @@ module SI
           match['viewurl'],
           match['textsnippet'],
           match['htmlsnippet']
-        ) if match['percentmatched'].to_i >= match_percent && match['urlerror'].nil?
-      end.compact.sort{|a,b| b.percent_matched <=> a.percent_matched}
+        )
+      end
+      _sort results
+    end
+
+    def _sort results
+      results.sort{|a,b| b.percent_matched <=> a.percent_matched }
+    end
+
+    def _without_rejects results
+      results.reject{|r| r['percentmatched'].to_i < match_percent && !r['urlerror'].nil? }
     end
 
   end

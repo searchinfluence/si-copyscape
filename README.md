@@ -1,11 +1,9 @@
 # SI::CopyScape Gem
 A gem to provide the communication layer with the Copyscape.com Premium API and your application.
 
-Copyscape provides a free plagiarism checker for finding copies of your web pages online, as well as two more powerful professional solutions for preventing content theft and content fraud:
+Wiki: (requires login) http://wiki.searchinfluence.com/index.php?title=CopyScape
 
-Copyscape Premium provides more powerful plagiarism detection than the free service, plus a host of other features, including copy-paste originality checks, batch search, private index, case tracking and an API.
-
-Copyscape Documentation: (requires login) http://copyscape.com/apiconfigure.php
+API Documentation: (requires login) http://copyscape.com/apiconfigure.php
 
 ## Usage:
 Set the following environment variables (or pass the values in during initialization):
@@ -87,4 +85,28 @@ The error method is also available on the SI::CopyscapeMatches collection return
 matches = copyscape.internet_matches! "test"
 matches.error
 #=>"At least 15 words are required to perform a search"
+```
+
+## Flog Score
+```
+   177.7: flog total
+     5.2: flog/method average
+
+    35.0: SI::CopyscapeMatches total
+    16.5: SI::CopyscapeMatches#_build_collection lib/copyscape_matches.rb:28
+    11.0: SI::CopyscapeMatches#_without_rejects lib/copyscape_matches.rb:47
+     7.5: SI::CopyscapeMatches#initialize  lib/copyscape_matches.rb:7
+
+    31.6: SI::CopyScape total
+    11.0: SI::CopyScape#credit_balance     lib/copyscape.rb:23
+     9.6: SI::CopyScape#add_to_private_index lib/copyscape.rb:52
+     6.0: SI::CopyScape#initialize         lib/copyscape.rb:11
+     5.0: SI::CopyScape#none
+
+    25.8: SI::CopyscapeAPI total
+    14.8: SI::CopyscapeAPI#request         lib/copyscape_api.rb:12
+    11.0: SI::CopyscapeAPI#_call_api       lib/copyscape_api.rb:27
+
+     7.1: SI::CopyscapeResponse total
+     7.1: SI::CopyscapeResponse#results    lib/copyscape_response.rb:27
 ```
