@@ -1,11 +1,9 @@
 # SI::CopyScape Gem
 A gem to provide the communication layer with the Copyscape.com Premium API and your application.
 
-Copyscape provides a free plagiarism checker for finding copies of your web pages online, as well as two more powerful professional solutions for preventing content theft and content fraud:
+Wiki: http://wiki.searchinfluence.com/index.php?title=CopyScape
 
-Copyscape Premium provides more powerful plagiarism detection than the free service, plus a host of other features, including copy-paste originality checks, batch search, private index, case tracking and an API.
-
-Copyscape Documentation: (requires login) http://copyscape.com/apiconfigure.php
+Copyscape API Documentation: (requires login) http://copyscape.com/apiconfigure.php
 
 ## Usage:
 Set the following environment variables (or pass the values in during initialization):
