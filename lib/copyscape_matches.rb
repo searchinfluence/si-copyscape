@@ -45,7 +45,7 @@ module SI
     end
 
     def _without_rejects results
-      results.reject{|r| r['percentmatched'].to_i < match_percent && !r['urlerror'].nil? }
+      results.reject{|r| r['percentmatched'].to_i < match_percent || !r['urlerror'].nil? }
     end
 
   end
