@@ -30,7 +30,7 @@ module SI
     end
 
     def query_words
-      response['querywords'] if response.is_a?(Hash)
+      response['querywords'].to_i if response.is_a?(Hash)
     end
 
   private

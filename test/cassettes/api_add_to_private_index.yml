@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.copyscape.com/api/?a=&e=UTF-8&i=&k=test&o=pindexadd&u=test
+    body:
+      encoding: UTF-8
+      string: Putting some text in our private index.  Fee Fi Fo Fum I smell the blood
+        of an englishman
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Aug 2015 18:36:28 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Set-Cookie:
+      - ck=5SF6BOI6N0G00G0CC8KO0CSO4; expires=Fri, 25-Aug-2017 18:36:28 GMT; path=/;
+        domain=.copyscape.com
+      Content-Length:
+      - '155'
+      Connection:
+      - close
+      Content-Type:
+      - text/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<response>\n\t<words>18</words>\n\t<handle>SIA_2_E00JOQ0A2W_F0N8GRC4GS</handle>\n\t<id></id>\n\t<title></title>\n</response>\n"
+    http_version:
+  recorded_at: Wed, 26 Aug 2015 18:40:41 GMT
+recorded_with: VCR 2.9.3

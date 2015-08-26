@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://www.copyscape.com/api/?c=3&e=UTF-8&k=test&o=psearch&u=test
+    body:
+      encoding: UTF-8
+      string: Because they are far less expensive when used, impractical vehicles
+        sell well in the secondary market.
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Aug 2015 17:03:50 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Set-Cookie:
+      - ck=A4D7XKCZ0AO0KGWG80G88KCS4; expires=Fri, 25-Aug-2017 17:03:50 GMT; path=/;
+        domain=.copyscape.com
+      Content-Length:
+      - '1081'
+      Connection:
+      - close
+      Content-Type:
+      - text/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<response>\n\t<querywords>17</querywords>\n\t<count>1</count>\n\t<result>\n\t\t<index>1</index>\n\t\t<url></url>\n\t\t<id>88029</id>\n\t\t<handle>SIA_2_E00JOQ0A2W_OJLHS6GHNQ</handle>\n\t\t<articlewords>553</articlewords>\n\t\t<added>2015-08-26
+        17:06:42</added>\n\t\t<title>Content Manager Content Version for item: 22003</title>\n\t\t<textsnippet>
+        ... are far less expensive when used, impractical vehicles sell well in the
+        secondary market ... </textsnippet>\n\t\t<htmlsnippet> ... are far less expensive
+        when used, impractical vehicles sell well in the secondary market ... </htmlsnippet>\n\t\t<minwordsmatched>14</minwordsmatched>\n\t\t<wordsmatched>16</wordsmatched>\n\t\t<textmatched>Because
+        they are far less expensive when used, impractical vehicles sell well in the
+        secondary market</textmatched>\n\t\t<percentmatched>94</percentmatched>\n\t</result>\n\t<allwordsmatched>16</allwordsmatched>\n\t<allpercentmatched>94</allpercentmatched>\n\t<alltextmatched>Because
+        they are far less expensive when used, impractical vehicles sell well in the
+        secondary market</alltextmatched>\n</response>\n"
+    http_version:
+  recorded_at: Wed, 26 Aug 2015 17:08:02 GMT
+recorded_with: VCR 2.9.3
