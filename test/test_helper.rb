@@ -11,4 +11,6 @@ VCR.configure do |config|
   config.hook_into :webmock # or :fakeweb
 end
 
-@@cs = SI::CopyScape.new(username: 'test', api_key: 'test')
+def begin_copyscape
+  SI::CopyScape.new(username: 'test', api_key: 'test')
+end
