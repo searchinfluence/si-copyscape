@@ -14,21 +14,22 @@ class TestCopyscapeResponse < Minitest::Test
   end
 
   def test_raw_xml
-    assert(@response.raw_xml.is_a?(String), 'raw_xml should return an xml string')
+    assert_kind_of(String, @response.raw_xml, 'raw_xml should return an xml string')
   end
 
   def test_raw_hash
     assert(@response.raw_hash.is_a?(Hash), "raw_hash method must return a hash")
   end
 
-  def test_remaining
+  def test_remaining_on_normal_search
     assert_nil(@response.remaining, 'remaining should be nil if this isnt a balance check')
+  end
 
+  def test_remaining_on_balance_check
     VCR.use_cassette("api_balance") do
       api = SI::CopyscapeAPI.new(username: 'test', api_key: 'test', api_url: 'http://www.copyscape.com/api/')
       balance_response = api.request(operation: 'balance')
-      assert(balance_response.remaining.is_a?(Hash), 'remaining method should return a hash')
-      refute_nil(balance_response.remaining, 'remaining should not be nil if this is a balance check')
+      assert_instance_of(SI::CopyscapeResponse, balance_response)
     end
   end
 

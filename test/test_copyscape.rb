@@ -15,7 +15,8 @@ class TestCopyscape < Minitest::Test
   def test_error
     VCR.use_cassette("api_error") do
       response = @cs.internet_matches! 'test'
-      assert(response.error.is_a?(String), "Error should respond with a string when present.")
+      error = 'At least 15 words are required to perform a search'
+      assert_equal(response.error, error)
     end
 
     VCR.use_cassette("api_internet_matches") do
