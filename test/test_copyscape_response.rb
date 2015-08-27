@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestCopyscape < Minitest::Test
+class TestCopyscapeResponse < Minitest::Test
   def setup
     api = SI::CopyscapeAPI.new(
       username: 'test',

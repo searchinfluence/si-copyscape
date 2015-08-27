@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    si-copyscape (0.0.7)
+    si-copyscape (0.1.0)
       crack
 
 GEM
