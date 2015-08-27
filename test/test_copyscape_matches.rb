@@ -58,14 +58,14 @@ class TestCopyscapeMatches < Minitest::Test
   def test_all_text_snippets
     snippet = '... Trusted, Scalable Search, Social and Online Advertising. A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.'
     snippets = @matches.all_text_snippets
-    assert(snippets.is_a?(Array), 'this should return an array')
+    assert_kind_of(Array, snippets)
     assert_equal(snippets.first, snippet)
   end
 
   def test_all_html_snippets
     snippet = '<font color="#777777">... Trusted, Scalable Search, Social and Online Advertising. </font><font color="#000000">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>'
     snippets = @matches.all_html_snippets
-    assert(snippets.is_a?(Array), 'this should return an array')
+    assert_kind_of(Array, snippets)
     assert_equal(snippets.first, snippet)
   end
 end
