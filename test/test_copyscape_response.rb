@@ -42,6 +42,6 @@ class TestCopyscapeResponse < Minitest::Test
   end
 
   def test_query_words
-    assert(@response.query_words.is_a?(Integer), 'query_words method must return an integer')
+    assert_equal(@response.query_words, 20)
   end
 end
