@@ -79,10 +79,10 @@ class TestCopyscape < Minitest::Test
   end
 
   def test_private_index_id
-    assert_respond_to(@private_index, 'id')
+    assert_nil(@private_index.id)
   end
 
   def test_private_index_title
-    assert_respond_to(@private_index, 'title')
+    assert_nil(@private_index.title)
   end
 end

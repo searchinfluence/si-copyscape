@@ -2,9 +2,8 @@ require 'test_helper'
 
 class TestCopyscapeMatches < Minitest::Test
   def setup
-    cs = begin_copyscape
-
     VCR.use_cassette("api_internet_matches") do
+      cs = begin_copyscape
       @matches = cs.internet_matches! 'A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.'
       @match = @matches.first
     end
@@ -64,8 +63,9 @@ class TestCopyscapeMatches < Minitest::Test
   end
 
   def test_all_html_snippets
+    snippet = '<font color="#777777">... Trusted, Scalable Search, Social and Online Advertising. </font><font color="#000000">A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.</font>'
     snippets = @matches.all_html_snippets
     assert(snippets.is_a?(Array), 'this should return an array')
-    assert(snippets.first.is_a?(String), 'Each array element should be a string')
+    assert_equal(snippets.first, snippet)
   end
 end
