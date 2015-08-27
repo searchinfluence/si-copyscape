@@ -3,8 +3,7 @@ require 'test_helper'
 class TestCopyscapeMatches < Minitest::Test
   def setup
     VCR.use_cassette("api_internet_matches") do
-      cs = SI::CopyScape.new(username: 'test', api_key: 'test')
-      @matches = cs.internet_matches! 'A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.'
+      @matches = @@cs.internet_matches! 'A national website promotion company, Search Influence routinely delivers a 10:1 return on investment, or better, for our customers.'
     end
   end
 
