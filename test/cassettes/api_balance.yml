@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.copyscape.com/api/?k=test&o=balance&u=test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - www.copyscape.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Aug 2015 21:16:53 GMT
+      Server:
+      - Apache/2.2.15 (CentOS)
+      X-Powered-By:
+      - PHP/5.3.3
+      Set-Cookie:
+      - ck=BXXO3ODYE2GW4S0OWSOWKG4C4; expires=Thu, 24-Aug-2017 21:16:53 GMT; path=/;
+        domain=.copyscape.com
+      Content-Length:
+      - '129'
+      Connection:
+      - close
+      Content-Type:
+      - text/xml; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<remaining>\n\t<value>240.51</value>\n\t<total>4810</total>\n\t<today>4810</today>\n</remaining>\n"
+    http_version:
+  recorded_at: Tue, 25 Aug 2015 21:21:04 GMT
+recorded_with: VCR 2.9.3
