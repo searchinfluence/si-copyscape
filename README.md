@@ -2,6 +2,7 @@
 A gem to provide the communication layer with the Copyscape.com Premium API and your application.
 
 API Documentation: (requires login) http://copyscape.com/apiconfigure.php
+RubyGems: https://rubygems.org/gems/si-copyscape
 
 ## Usage:
 Set the following environment variables (or pass the values in during initialization):
@@ -12,7 +13,7 @@ Add this gem to your project:
 
 ```ruby
 # Add the following to your Gemfile
-gem 'si-copyscape', '0.0.0'
+gem 'si-copyscape'
 ```
 
 Instantiate the copyscape object with the following optional paramaters
