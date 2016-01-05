@@ -1,8 +1,6 @@
 # SI::CopyScape Gem
 A gem to provide the communication layer with the Copyscape.com Premium API and your application.
 
-Wiki: (requires login) http://wiki.searchinfluence.com/index.php?title=CopyScape
-
 API Documentation: (requires login) http://copyscape.com/apiconfigure.php
 
 ## Usage:
@@ -10,13 +8,11 @@ Set the following environment variables (or pass the values in during initializa
 - ENV['COPYSCAPE_USERNAME']
 - ENV['COPYSCAPE_API_KEY']
 
-Find the most recent version of this gem at http://gems.searchinfluence.com/gems/si-copyscape and then specify the version number when adding this gem to your application's Gemfile.
+Add this gem to your project:
 
 ```ruby
 # Add the following to your Gemfile
-source 'http://user:pass@gems.searchinfluence.com' do
-  gem 'si-copyscape', '0.0.0'
-end
+gem 'si-copyscape', '0.0.0'
 ```
 
 Instantiate the copyscape object with the following optional paramaters
@@ -63,7 +59,7 @@ copyscape.internet_and_private_matches! text
 # ]
 ```
 
-Add text to our private index on Copyscape.com
+Add text to your private index on Copyscape.com
 ```ruby
 copyscape.add_to_private_index(
  text: 'Text to add to index',
