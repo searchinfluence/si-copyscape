@@ -2,6 +2,7 @@
 A gem to provide the communication layer with the Copyscape.com Premium API and your application.
 
 API Documentation: (requires login) http://copyscape.com/apiconfigure.php
+
 RubyGems: https://rubygems.org/gems/si-copyscape
 
 ## Usage:
